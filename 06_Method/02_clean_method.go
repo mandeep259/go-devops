@@ -25,7 +25,7 @@ func getStatus(value float64) string {
 }
 
 func (s Server) printReport() {
-	fmt.Printf("Server Hostname: %s\n", s.Hostname)
+	fmt.Printf("Server Hostname: (%s)\n", s.Hostname)
 	fmt.Printf("CPU: %.2f%% (%s)\n", s.CPU, s.getCPUStatus())
 	fmt.Printf("Memory: %.2f%% (%s)\n", s.Memory, s.getMemoryStatus())
 	fmt.Printf("Disk: %.2f%% (%s)\n", s.Disk, s.getDiskStatus())
