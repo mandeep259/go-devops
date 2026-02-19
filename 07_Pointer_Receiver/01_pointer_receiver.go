@@ -59,7 +59,7 @@ func (s *Server) restart() {
 
 }
 
-func (s Server) printBanner() {
+func printBanner() {
 	fmt.Printf("====================================\n")
 	fmt.Printf("	Server Monitoring Report		 \n")
 	fmt.Printf("====================================\n")
@@ -75,10 +75,11 @@ func main() {
 	printBanner()
 	s.printReport()
 	s.increaseCPU()
-	fmt.Println("=== After Increase CPU ===")
-	s.printReport()
 	s.restart()
+	fmt.Println("=== After Increase CPU ===")
+	s.increaseCPU()
 	fmt.Println("=== After Restart ===")
+	fmt.Println("-------------")
 	s.printReport()
 
 }
