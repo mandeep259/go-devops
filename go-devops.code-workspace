@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "go-devops",
+			"path": "."
+		},
+		{
+			"name": "go-rebuild",
+			"path": "../go-rebuild"
+		}
+	],
+	"settings": {}
+}
