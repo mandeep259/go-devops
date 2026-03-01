@@ -69,6 +69,18 @@ func HighestCPU(servers []Server) int {
 	return highestCpu
 }
 
+func (s *Server) Start () {
+	if !s.IsRunning {
+		s.IsRunning = true
+	}
+}
+
+func (s *Server) Stop () {
+	if s.IsRunning {
+		s.IsRunning = false
+	}
+}
+
 func main() {
 
 	Server1 := Server{"Node-A", 4, 16, true}
@@ -120,6 +132,16 @@ func main() {
     	totalRAM, 
     	HighestCPU(Servers), 
     	HighestRAM(Servers),
-)
-
+	)
+		Servers[2].Start()
+		fmt.Println("Running Server",runningCount() )
+				// Stop()
+	fmt.Printf("Stats: [Running: %d | Down: %d | Total CPU: %d | Total RAM: %dGB | Max CPU: %d | Max RAM: %dGB]\n", 
+    	runningCount, 
+    	downCount, 
+    	totalCPUCore, 
+    	totalRAM, 
+    	HighestCPU(Servers), 
+    	HighestRAM(Servers),
+	)
 }
